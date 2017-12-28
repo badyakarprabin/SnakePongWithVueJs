@@ -10,11 +10,11 @@
 
 
 <script>
-import EventBus from '../modules/EventsBus'
+import snake from './Snake'
+import store from '../vuexstore/store'
 import KeyMaps from '../modules/KeyMaps'
 import defaults from '../modules/Defaults'
-import store from '../vuexstore/store'
-import snake from './Snake'
+import EventBus from '../modules/EventsBus'
 
 export default {
   components: {
@@ -37,6 +37,7 @@ export default {
   mounted: function () {
     // get 2D rendering context
     let cnvs = this.$refs.cnvs;
+    
     this.ctx = cnvs.getContext("2d");
     cnvs.height = defaults.gridHeight * defaults.gridScale;
     cnvs.width = defaults.gridWidth * defaults.gridScale;
